@@ -1,0 +1,12 @@
+<template name="starsTemplate">
+  <view class='stars-container'>
+    <view class='stars'>
+    <!--stars [1,1,1,0,0] 判断每项是否为true -->
+      <block wx:for="{{stars}}" wx:for-item="i" wx:key="i">
+        <image wx:if="{{i}}" src="/images/icon/star.png"></image>
+        <image wx:else="{{i}}" src="/images/icon/none-star.png"></image>
+      </block>
+    </view>
+    <text class='star-score'>{{average}}</text>
+  </view>
+</template>

@@ -1,0 +1,23 @@
+<import src="movieList/movie-list-template.wxml" />
+<import src="movie-grid/movie-grid.wxml" />
+<view class='search'>
+   <icon type='search' class='search-img' size='14' color='#405f80'></icon>
+   <input type='text' placeholder='唐人街探案2' placeholder-class='placeholder' bindfocus='onBindFocus' bindconfirm='onSearch'></input>
+   <!--初始化的时候将关闭按钮隐藏  -->
+   <icon type='clear' class='clear-img' size='14' color='#405f80' catchtap='recover' wx:if="{{closeImgShow}}"></icon>
+</view>
+<view class='container' wx:if="{{containerShow}}">
+  <view>
+    <template is="movieListTemplate" data="{{...inTheaters}}"/>
+  </view>
+   <view>
+    <template is="movieListTemplate" data="{{...comeingSoon}}"/>
+  </view>
+  <view>
+    <template is="movieListTemplate" data="{{...top250}}"/>
+  </view>
+</view>
+<!--初始化的时候，搜索页面是隐藏的  -->
+<view class='search-pannel' wx:if="{{searchPanelShow}}">
+  <template is="movieGridTemplate" data="{{...searchMovies}}"/>
+</view>

@@ -1,0 +1,5 @@
+{
+  "navigationBarBackgroundColor":"gray",
+  "enablePullDownRefresh":true,
+  "onReachBottomDistance": 50
+}

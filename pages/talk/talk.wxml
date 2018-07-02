@@ -1,0 +1,16 @@
+<import src="talk-article-template/talk-article-template.wxml" />
+<swiper indicator-dots="true" autoplay="true">
+  <swiper-item wx:for="{{bannerList}}" wx:key="index">
+    <image src='{{item}}'></image>
+  </swiper-item>
+</swiper>
+<scroll-view>
+  <block wx:for="{{articleList}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+  <!--在小程序中，阻止冒泡很简单，就是将bind改成catch，  -->
+  <view catchtap='details' data-aid="{{item.id}}">
+     <!--  bu neng bangding shijian  -->
+     <template is="talkArticleTemplate" data="{{...item}}"></template>
+  </view>
+ 
+  </block>
+</scroll-view>
